@@ -1,0 +1,90 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Item',
+                     typeNamePlural: 'Items',
+                     title: { type: #STANDARD,
+                     value: 'ID'
+                     } }, 
+        presentationVariant:[{ sortOrder:[{ by: 'ID',
+                                            direction: #DESC}],
+                               visualizations: [{ type: #AS_LINEITEM }] }] }
+
+
+annotate entity Z_C_ITEMS_4193
+    with 
+{
+@UI.facet: [{ id: 'Item',
+                purpose: #STANDARD,
+                type: #IDENTIFICATION_REFERENCE,
+                label: 'Items'} ]
+                
+@UI: { lineItem: [{ position: 10 ,
+                    importance: #HIGH }],            
+           identification: [{ position: 10 }],
+           selectionField: [{ position: 10 }]  } 
+                          
+    Id;
+    
+@UI: { lineItem: [{ position: 20 ,
+                    importance: #HIGH,
+                    label: 'Name' }],            
+           identification: [{ position: 20 }],
+           selectionField: [{ position: 20 }]  } 
+               
+    Name;
+
+@UI: { lineItem: [{ position: 30 ,
+                    importance: #HIGH,
+                    label: 'Description' }],            
+           identification: [{ position: 30 }] } 
+    
+    Description;
+    
+@UI: { lineItem: [{ position: 40 ,
+                        importance: #MEDIUM }],            
+           identification: [{ position: 40 }] } 
+    
+    Realisedate;
+    
+@UI: { lineItem: [{ position: 50 ,
+                        importance: #MEDIUM }],            
+           identification: [{ position: 50 }] } 
+    
+    Discontinuedate;
+    
+@UI: { lineItem: [{ position: 60 ,
+                        importance: #HIGH }],            
+           identification: [{ position: 60 }] } 
+    
+    Price;
+    
+@UI: { lineItem: [{ position: 70 ,
+                        importance: #HIGH }],            
+           identification: [{ position: 70 }]  } 
+    
+    CurrencyCode;
+    
+@UI: { lineItem: [{ position: 80 ,
+                        importance: #MEDIUM }],            
+           identification: [{ position: 80 }]  } 
+    
+    Heigth;
+    
+@UI: { lineItem: [{ position: 90 ,
+                        importance: #MEDIUM }],            
+           identification: [{ position: 90 }]  } 
+    
+    Width;
+    
+@UI: { lineItem: [{ position: 100 ,
+                        importance: #MEDIUM }],            
+           identification: [{ position: 100 }]  } 
+    
+    Depth;
+    
+@UI: { lineItem: [{ position: 110 ,
+                        importance: #HIGH }],            
+           identification: [{ position: 110 }]   } 
+    
+    Quantity;
+    
+}

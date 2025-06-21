@@ -1,0 +1,19 @@
+interface;
+
+
+define behavior for Z_I_HEADER_4193 alias ZI_HEADER_4193
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _items { create; }
+}
+
+define behavior for Z_I_ITEMS_4193 alias ZI_ITEMS_4193
+{
+  use update;
+  use delete;
+
+  use association _Header;
+}

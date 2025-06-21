@@ -1,0 +1,56 @@
+managed implementation in class zbp_r_header_4193 unique;
+strict ( 2 );
+
+define behavior for Z_R_HEADER_4193 //alias <alias_name>
+persistent table zheader_4193
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( mandatory: create, readonly: update ) Id;
+  association _items { create; }
+
+  mapping for zheader_4193{
+    Id = id;
+    Email = email;
+    Firstname = firstname;
+    Lastname = lastname;
+    Country = country;
+    Createon = createon;
+    Deliverydate = deliverydate;
+    Orderstatus = orderstatus;
+    Imageurl = imageurl;
+  }
+}
+
+define behavior for Z_R_ITEMS_4193 //alias <alias_name>
+persistent table zitems_4193
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( mandatory: create, readonly: update ) Id;
+  field (readonly : update) IdHeader;
+  association _Header;
+
+  mapping for zitems_4193{
+    Id = id;
+    IdHeader = id_h;
+    Name = name;
+    Description = description;
+    Releasedate = releasedate;
+    Discontinueddate = discontinueddate;
+    Price = price;
+    CurrencyCode = currencycode;
+    Height = height;
+    Width = width;
+    Depth = depth;
+    Quantity = quantity;
+    Unitofmeasure = unitofmeasure;
+  }
+}

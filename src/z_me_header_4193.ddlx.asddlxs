@@ -1,0 +1,103 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'Order',
+                     typeNamePlural: 'Orders',
+                     imageUrl: 'Imageurl',
+                     title: { type: #STANDARD,
+                     value: 'ID'
+                     } }, 
+        presentationVariant:[{ sortOrder:[{ by: 'ID',
+                                            direction: #DESC}],
+                               visualizations: [{ type: #AS_LINEITEM }] }] }
+annotate entity Z_C_HEADER_4193
+    with 
+{
+    @UI.facet: [{ id: 'Order',
+                  purpose: #STANDARD,
+                  type: #IDENTIFICATION_REFERENCE,
+                  label: 'Order',
+                  position: 10},
+                  
+                 { id: 'Item',
+                   purpose: #STANDARD,
+                   type: #LINEITEM_REFERENCE,
+                   label: 'Items',
+                   targetElement: '_items',
+                   position: 20}]
+                   
+    @UI: { lineItem: [{ position: 10 ,
+                        importance: #HIGH }], 
+                        
+           identification: [{ position: 10 }],
+           
+           selectionField: [{ position: 10 }]  }
+    Id;
+    
+    @UI: { lineItem: [{ position: 20 ,
+                        importance: #HIGH,
+                        label: 'Email' }], 
+                        
+           identification: [{ position: 20 }],
+           
+           selectionField: [{ position: 20 }]  }
+    
+    Email;
+    
+    @UI: { lineItem: [{ position: 30 ,
+                        importance: #HIGH,
+                        label: 'Firstname' }], 
+                        
+           identification: [{ position: 30 }],
+           
+           selectionField: [{ position: 30 }]  }
+           
+    Firstname;
+    
+    @UI: { lineItem: [{ position: 40 ,
+                        importance: #MEDIUM,
+                        label: 'Lastname' }], 
+                        
+           identification: [{ position: 40 }] }
+   
+   Lastname;
+   
+   @UI: { lineItem: [{ position: 50 ,
+                        importance: #MEDIUM }], 
+                        
+           identification: [{ position: 50 }]  }
+           
+  Country;
+  
+  @UI: { lineItem: [{ position: 60 ,
+                        importance: #MEDIUM }], 
+                        
+           identification: [{ position: 60 }],
+           
+           selectionField: [{ position: 60 }]  }
+           
+  Createon;
+  
+  @UI: { lineItem: [{ position: 70 ,
+                        importance: #MEDIUM }], 
+                        
+           identification: [{ position: 70 }]  }
+  
+  Deliverydate;
+  
+  @UI: { lineItem: [{ position: 80 ,
+                      importance: #HIGH, 
+                      criticality: 'Orderstatus'}],              
+           identification: [{ position: 80 }],
+           selectionField: [{ position: 80 }],
+           textArrangement: #TEXT_ONLY  }
+           
+  Orderstatus;
+  
+  @UI: { lineItem: [{ position: 90 ,
+                        importance: #MEDIUM }], 
+                        
+           identification: [{ position: 90 }]  }
+    
+  Imageurl;
+       
+}
